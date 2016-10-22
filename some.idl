@@ -1,0 +1,68 @@
+/*************************************************************************
+ *
+ *  The Contents of this file are made available subject to the terms of
+ *  the BSD license.
+ *
+ *  Copyright 2000, 2010 Oracle and/or its affiliates.
+ *  All rights reserved.
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *  1. Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *  2. Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in the
+ *     documentation and/or other materials provided with the distribution.
+ *  3. Neither the name of Sun Microsystems, Inc. nor the names of its
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ *  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ *  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ *  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+ *  OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ *  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ *  TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+ *  USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ *************************************************************************/
+
+#include <com/sun/star/uno/XInterface.idl>
+#include <com/sun/star/lang/IllegalArgumentException.idl>
+
+module neuronica
+{
+
+    interface XBackProp
+    {
+		short createNetwork3([in] long il, [in] long hl, [in] long ol);
+		void initializeNetwork([in] long randomSeed);
+		long getLayersCount();
+		long getWeightsCount();
+
+		long getLayer([in] long nLayer);
+		double getWeight([in] long nWeight);
+		void setWeight([in] long nWeight, [in] double nValue);
+
+		void createPatterns([in] long nPatterns);
+		double getPatternValue([in] long nPattern, [in] long nUnit);
+		void setPatternValue([in] long nPattern, [in] long nUnit, [in] double nValue);
+
+		void trainBPROP([in] long Length, [in] double MaxError, [in] double LearningRate, [in] double Momentum);
+		void trainRPROP([in] long Length, [in] double MaxError, [in] double IncreaseFactor, [in] double DecreaseFactor, [in] double DeltaMin, [in] double DeltaMax, [in] double DeltaInit);
+		void trainSCG  ([in] long Length, [in] double MaxError, [in] double Sigma, [in] double Lambda);
+		void test([in] long nPattern);
+		double getActivation([in] long nIndex);
+	};
+
+    service BackProp : XBackProp
+    {
+        create([in]string sArgument)
+            raises (::com::sun::star::lang::IllegalArgumentException);
+    };
+};

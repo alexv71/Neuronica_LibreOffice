@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="dlgBackPropagation" dlg:left="155" dlg:top="119" dlg:width="181" dlg:height="207" dlg:closeable="true" dlg:moveable="true" dlg:title="Backpropagation manager">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:font-weight="150"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:button dlg:id="btnTrainDataRange" dlg:tab-index="3" dlg:disabled="true" dlg:left="12" dlg:top="86" dlg:width="12" dlg:height="12" dlg:tag="fldTrainData" dlg:value="...">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.subEventShrink?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
+  <dlg:button dlg:id="btnClose" dlg:tab-index="14" dlg:left="137" dlg:top="184" dlg:width="40" dlg:height="16" dlg:value="Close" dlg:button-type="ok"/>
+  <dlg:button dlg:id="btnBew" dlg:tab-index="0" dlg:left="135" dlg:top="9" dlg:width="40" dlg:height="16" dlg:value="New...">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.btnNew_Clicked?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
+  <dlg:button dlg:id="btnSave" dlg:tab-index="12" dlg:disabled="true" dlg:left="135" dlg:top="29" dlg:width="40" dlg:height="16" dlg:value="Save">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.btnSave_Clicked?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
+  <dlg:button dlg:id="btnLoad" dlg:tab-index="13" dlg:left="135" dlg:top="49" dlg:width="40" dlg:height="16" dlg:value="Load">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.btnLoad_Clicked?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
+  <dlg:titledbox dlg:id="FrameControl3" dlg:tab-index="17" dlg:left="8" dlg:top="5" dlg:width="124" dlg:height="30">
+   <dlg:title dlg:value="Neural network"/>
+  </dlg:titledbox>
+  <dlg:button dlg:id="btnInit" dlg:tab-index="2" dlg:disabled="true" dlg:left="93" dlg:top="52" dlg:width="30" dlg:height="12" dlg:value="Init">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.btnInit_Clicked?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
+  <dlg:text dlg:style-id="0" dlg:id="lblNeuralNetwork" dlg:tab-index="18" dlg:left="12" dlg:top="19" dlg:width="111" dlg:height="12" dlg:value="No network"/>
+  <dlg:text dlg:id="Label1" dlg:tab-index="20" dlg:disabled="true" dlg:left="12" dlg:top="53" dlg:width="34" dlg:height="10" dlg:value="Random seed"/>
+  <dlg:numericfield dlg:id="nfEpoches" dlg:tab-index="6" dlg:disabled="true" dlg:left="100" dlg:top="114" dlg:width="26" dlg:height="12" dlg:decimal-accuracy="0" dlg:value="0">
+   <script:event script:event-name="on-textchange" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.nfEpoches_Changed?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:numericfield>
+  <dlg:numericfield dlg:id="nfRandomSeed" dlg:tab-index="1" dlg:disabled="true" dlg:left="56" dlg:top="52" dlg:width="35" dlg:height="12" dlg:decimal-accuracy="0" dlg:value="0">
+   <script:event script:event-name="on-textchange" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.nfRandomSeed_Changed?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:numericfield>
+  <dlg:button dlg:id="btnTrain" dlg:tab-index="8" dlg:disabled="true" dlg:left="86" dlg:top="130" dlg:width="40" dlg:height="12" dlg:value="Train">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.btnTrain_Clicked?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
+  <dlg:button dlg:id="btnParameters" dlg:tab-index="7" dlg:disabled="true" dlg:left="41" dlg:top="130" dlg:width="40" dlg:height="12" dlg:value="Parameters...">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.btnParameters_Clicked?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
+  <dlg:button dlg:id="btnTest" dlg:tab-index="11" dlg:disabled="true" dlg:left="87" dlg:top="184" dlg:width="40" dlg:height="12" dlg:value="Test">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.btnTest_Clicked?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
+  <dlg:timefield dlg:id="fldTrainData" dlg:tab-index="4" dlg:disabled="true" dlg:left="28" dlg:top="86" dlg:width="99" dlg:height="12" dlg:text="No data"/>
+  <dlg:timefield dlg:id="fldTestData" dlg:tab-index="10" dlg:disabled="true" dlg:left="28" dlg:top="168" dlg:width="99" dlg:height="12" dlg:text="No data"/>
+  <dlg:menulist dlg:id="cbAlg" dlg:tab-index="5" dlg:disabled="true" dlg:left="12" dlg:top="114" dlg:width="86" dlg:height="12" dlg:spin="true" dlg:linecount="3">
+   <dlg:menupopup>
+    <dlg:menuitem dlg:value="BackPropagation"/>
+    <dlg:menuitem dlg:value="Resilient Propagation"/>
+    <dlg:menuitem dlg:value="Scaled Conugate Gradient"/>
+   </dlg:menupopup>
+   <script:event script:event-name="on-itemstatechange" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.cbAlg_Changed?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:menulist>
+  <dlg:button dlg:id="btnTestDataRange" dlg:tab-index="9" dlg:disabled="true" dlg:left="12" dlg:top="168" dlg:width="12" dlg:height="12" dlg:tag="fldTestData" dlg:value="...">
+   <script:event script:event-name="on-performaction" script:macro-name="vnd.sun.star.script:Neuronica.BackPropagation.subEventShrink?language=Basic&amp;location=application" script:language="Script"/>
+  </dlg:button>
+  <dlg:titledbox dlg:id="FrameControlInit" dlg:tab-index="19" dlg:disabled="true" dlg:left="8" dlg:top="39" dlg:width="124" dlg:height="30">
+   <dlg:title dlg:value="Initialize"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="FrameControlTrain" dlg:tab-index="15" dlg:disabled="true" dlg:left="8" dlg:top="74" dlg:width="124" dlg:height="76">
+   <dlg:title dlg:value="Train data"/>
+  </dlg:titledbox>
+  <dlg:titledbox dlg:id="FrameControlTest" dlg:tab-index="16" dlg:disabled="true" dlg:left="8" dlg:top="156" dlg:width="124" dlg:height="46">
+   <dlg:title dlg:value="Test data"/>
+  </dlg:titledbox>
+  <dlg:text dlg:id="Label2" dlg:tab-index="21" dlg:disabled="true" dlg:left="14" dlg:top="103" dlg:width="34" dlg:height="10" dlg:value="Algorithm"/>
+  <dlg:text dlg:id="Label3" dlg:tab-index="22" dlg:disabled="true" dlg:left="102" dlg:top="103" dlg:width="25" dlg:height="10" dlg:value="Epoches"/>
+ </dlg:bulletinboard>
+</dlg:window>
